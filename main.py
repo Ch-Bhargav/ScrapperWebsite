@@ -32,7 +32,7 @@ def codeforcesRating(username):
             "Maximum Rating": remove_tags(str(user_info[-1]))
         }
 
-        print("\n+--------------------+")
+        print("\n+------------------+")
         print("| Codeforces Profile |")
         print("+--------------------+")
         for key, value in profile_data.items():
@@ -93,6 +93,18 @@ def submittdData():
 	codechefRating(codechefUsername)
 	codeforcesRating(codeforcesUsername)
 	return "Data Recived"
+
+@app.route('/codeforcesprofile',methods = ['POST'])
+def codeforceProfile():
+     username = request.form['codeforcesUsername']
+     codeforcesRating(username)
+     return "Profile is genrated"
+
+@app.route('/codechefprofile',methods=['POST'])
+def codechefProfile():
+     username = request.form['codechefUsername']
+     codechefRating(username)
+     return "Profile is generated"
 
 @app.route('/codeforces.html')
 def codeforces():
