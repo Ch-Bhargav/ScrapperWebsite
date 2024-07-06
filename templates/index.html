@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloWorld Scrapper</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="/">HelloWorld!</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="codechef.html">Codechef</a></li>
+                    <li><a href="codeforces.html">Codeforces</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="home" class="hero">
+            <div class= "Midcontainer">
+                <h2>Enter the Usrname</h2>
+                <form action="/submit" method="post">
+                    <label for="codechefUsername">CodeChef Username:</label>
+                    <input type="text" id = "codechefUsername" name="codechefUsername" placeholder="Codechef Username" required><br><br>
+                    <label for="codeforcesUserName">CodeForces Username:</label>
+                    <input type="text" id = "codeforcesUsername" name="codeforcesUsername" placeholder="Codeforces Username" required><br><br>    
+                    <button type="submit" class="btn">Get Rank</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <p>&copy; 2024 My HelloWorld Scrapper. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
