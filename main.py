@@ -32,11 +32,13 @@ def codeforcesRating(username):
             "Maximum Rating": remove_tags(str(user_info[-1]))
         }
 
-        print("\n+------------------+")
-        print("| Codeforces Profile |")
-        print("+--------------------+")
-        for key, value in profile_data.items():
-            print(f"{key}: {value}")
+        return profile_data
+
+        # print("\n+------------------+")
+        # print("| Codeforces Profile |")
+        # print("+--------------------+")
+        # for key, value in profile_data.items():
+        #     print(f"{key}: {value}")
 
     except Exception as e:
         print(f"Error fetching Codeforces profile: {e}")
@@ -61,11 +63,13 @@ def codechefRating(username):
             "Global Rank": soup.find("div", {"class": "rating-ranks"}).find("a").get_text(strip=True) if soup.find("div", {"class": "rating-ranks"}) else "N/A"
         }
 
-        print("\n+------------------+")
-        print("| CodeChef Profile |")
-        print("+------------------+")
-        for key, value in profile_data.items():
-            print(f"{key}: {value}")
+        return profile_data
+
+        # print("\n+------------------+")
+        # print("| CodeChef Profile |")
+        # print("+------------------+")
+        # for key, value in profile_data.items():
+        #     print(f"{key}: {value}")
 
     except Exception as e:
         print(f"Error fetching CodeChef profile: {e}")
@@ -78,7 +82,7 @@ def home():
 	return render_template('index.html')
 
 
-@app.route('/codechef.html')
+@app.route('/codechef')
 def codechef():
 	return render_template('codechef.html')
 
@@ -90,23 +94,25 @@ def submittdData():
 	print("Codechef Username:",codechefUsername)
 	print("Codeforces Username:", codeforcesUsername)
 
-	codechefRating(codechefUsername)
+	codechefProfile=codechefRating(codechefUsername)
 	codeforcesRating(codeforcesUsername)
 	return "Data Recived"
 
 @app.route('/codeforcesprofile',methods = ['POST'])
 def codeforceProfile():
      username = request.form['codeforcesUsername']
-     codeforcesRating(username)
-     return "Profile is genrated"
+     codeforcesProfile = codeforcesRating(username)
+     print(codeforcesProfile)
+     return render_template('codeforces.html',profile_data = codeforcesProfile)
 
 @app.route('/codechefprofile',methods=['POST'])
 def codechefProfile():
      username = request.form['codechefUsername']
-     codechefRating(username)
-     return "Profile is generated"
+     codechefProfile = codechefRating(username)
+    #  print(codechefProfile)
+     return render_template('codechef.html',profile_data = codechefProfile)
 
-@app.route('/codeforces.html')
+@app.route('/codeforces')
 def codeforces():
 	return render_template('codeforces.html')
 

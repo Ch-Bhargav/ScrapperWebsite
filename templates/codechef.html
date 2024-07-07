@@ -14,8 +14,8 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="codechef.html">Codechef</a></li>
-                    <li><a href="codeforces.html">Codeforces</a></li>
+                    <li><a href="codechef">Codechef</a></li>
+                    <li><a href="codeforces">Codeforces</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,6 +30,41 @@
                     <button type="submit" class="btn">Get Rank</button>
                 </form>
             </div>
+
+            <div class = "container"> 
+            {% if profile_data %}
+        <table>
+            <tr>
+                <th>Profile Link</th>
+                <td><a href="{{ profile_data['Profile Link'] }}" target="_blank">{{ profile_data['Profile Link'] }}</a></td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ profile_data['Username'] }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ profile_data['Name'] }}</td>
+            </tr>
+            <tr>
+                <th>Rating</th>
+                <td>{{ profile_data['Rating'] }}</td>
+            </tr>
+            <tr>
+                <th>Stars</th>
+                <td>{{ profile_data['Stars'] }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ profile_data['Country'] }}</td>
+            </tr>
+            <tr>
+                <th>Global Rank</th>
+                <td>{{ profile_data['Global Rank'] }}</td>
+            </tr>
+        </table>
+    {% endif %}
+</div>
         </section>
     </main>
 

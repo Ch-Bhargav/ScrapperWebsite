@@ -14,8 +14,8 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="codechef.html">Codechef</a></li>
-                    <li><a href="codeforces.html">Codeforces</a></li>
+                    <li><a href="codechef">Codechef</a></li>
+                    <li><a href="codeforces">Codeforces</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,6 +30,38 @@
                     <button type="submit" class="btn">Get Rank</button>
                 </form>
             </div>
+
+            <div class = 'container'>
+            {% if profile_data %}
+        <table>
+            <tr>
+                <th>Profile Link</th>
+                <td><a href="{{ profile_data['Profile Link'] }}" target="_blank">{{ profile_data['Profile Link'] }}</a></td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ profile_data['Username'] }}</td>
+            </tr>
+            <tr>
+                <th>Present Title</th>
+                <td>{{ profile_data['Present Title'] }}</td>
+            </tr>
+            <tr>
+                <th>Maximum Title</th>
+                <td>{{ profile_data['Maximum Title'] }}</td>
+            </tr>
+            <tr>
+                <th>Present Rating</th>
+                <td>{{ profile_data['Present Rating'] }}</td>
+            </tr>
+            <tr>
+                <th>Maximum Rating</th>
+                <td>{{ profile_data['Maximum Rating'] }}</td>
+            </tr>
+            
+        </table>
+    {% endif %}
+</div>
         </section>
     </main>
 

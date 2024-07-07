@@ -9,6 +9,20 @@ body {
     color: #333;
 }
 
+/* Table styling */
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
 /* Container styling */
 .container {
     display: flex;
