@@ -96,6 +96,12 @@ nav ul li a:hover {
     }
 }
 
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
 
 
 /* Navigation styling */

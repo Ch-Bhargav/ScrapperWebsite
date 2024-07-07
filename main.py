@@ -95,8 +95,8 @@ def submittdData():
 	print("Codeforces Username:", codeforcesUsername)
 
 	codechefProfile=codechefRating(codechefUsername)
-	codeforcesRating(codeforcesUsername)
-	return "Data Recived"
+	codeforcesProfile=codeforcesRating(codeforcesUsername)
+	return render_template('index.html',codechef_profile_data=codechefProfile,codeforces_profile_data=codeforcesProfile)
 
 @app.route('/codeforcesprofile',methods = ['POST'])
 def codeforceProfile():

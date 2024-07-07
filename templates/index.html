@@ -14,8 +14,8 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="codechef">Codechef</a></li>
-                    <li><a href="codeforces">Codeforces</a></li>
+                    <li><a href="/codechef">CodeChef</a></li>
+                    <li><a href="/codeforces">Codeforces</a></li>
                 </ul>
             </nav>
         </div>
@@ -23,17 +23,91 @@
     
     <main>
         <section id="home" class="hero">
-            <div class= "Midcontainer">
-                <h2>Enter the Usrname</h2>
+            <div class="Midcontainer">
+                <h2>Enter the Username</h2>
                 <form action="/submit" method="post">
                     <label for="codechefUsername">CodeChef Username:</label>
-                    <input type="text" id = "codechefUsername" name="codechefUsername" placeholder="Codechef Username" required><br><br>
-                    <label for="codeforcesUserName">CodeForces Username:</label>
-                    <input type="text" id = "codeforcesUsername" name="codeforcesUsername" placeholder="Codeforces Username" required><br><br>    
+                    <input type="text" id="codechefUsername" name="codechefUsername" placeholder="CodeChef Username" required>
+                    <label for="codeforcesUsername">CodeForces Username:</label>
+                    <input type="text" id="codeforcesUsername" name="codeforcesUsername" placeholder="CodeForces Username" required>   
                     <button type="submit" class="btn">Get Rank</button>
                 </form>
             </div>
         </section>
+
+        <div class="wrapper">
+            <div class="container">
+                <h2>Codeforces Profile</h2>
+                {% if codeforces_profile_data %}
+                <table>
+                    <tr>
+                        <th>Profile Link</th>
+                        <td><a href="{{ codeforces_profile_data['Profile Link'] }}" target="_blank">{{ codeforces_profile_data['Profile Link'] }}</a></td>
+                    </tr>
+                    <tr>
+                        <th>Username</th>
+                        <td>{{ codeforces_profile_data['Username'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Present Title</th>
+                        <td>{{ codeforces_profile_data['Present Title'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Maximum Title</th>
+                        <td>{{ codeforces_profile_data['Maximum Title'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Present Rating</th>
+                        <td>{{ codeforces_profile_data['Present Rating'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Maximum Rating</th>
+                        <td>{{ codeforces_profile_data['Maximum Rating'] }}</td>
+                    </tr>
+                </table>
+                {% else %}
+                <p>No Codeforces data available.</p>
+                {% endif %}
+            </div>
+    
+            <div class="container">
+                <h2>CodeChef Profile</h2>
+                {% if codechef_profile_data %}
+                <table>
+                    <tr>
+                        <th>Profile Link</th>
+                        <td><a href="{{ codechef_profile_data['Profile Link'] }}" target="_blank">{{ codechef_profile_data['Profile Link'] }}</a></td>
+                    </tr>
+                    <tr>
+                        <th>Username</th>
+                        <td>{{ codechef_profile_data['Username'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Name</th>
+                        <td>{{ codechef_profile_data['Name'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Rating</th>
+                        <td>{{ codechef_profile_data['Rating'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Stars</th>
+                        <td>{{ codechef_profile_data['Stars'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Country</th>
+                        <td>{{ codechef_profile_data['Country'] }}</td>
+                    </tr>
+                    <tr>
+                        <th>Global Rank</th>
+                        <td>{{ codechef_profile_data['Global Rank'] }}</td>
+                    </tr>
+                </table>
+                {% else %}
+                <p>No CodeChef data available.</p>
+                {% endif %}
+            </div>
+        </div>
     </main>
 
     <footer>
