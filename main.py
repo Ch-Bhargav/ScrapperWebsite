@@ -116,5 +116,5 @@ def codechefProfile():
 def codeforces():
 	return render_template('codeforces.html')
 
-if __name__ == "__main__":
-	app.run(debug = True,port = 1234)
+# if __name__ == "__main__":
+# 	app.run(debug = True,port = 1234)
